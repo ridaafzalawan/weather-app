@@ -23,7 +23,6 @@ A modern React weather app with live city search, animated backgrounds, a 5-day 
 | Framework | React (hooks, custom hooks, Context API) |
 | HTTP | Axios |
 | Weather Data | [OpenWeatherMap API](https://openweathermap.org/) |
-| Styling | CSS-in-JS (inline styles) / glassmorphism |
 
 ## Prerequisites
 
