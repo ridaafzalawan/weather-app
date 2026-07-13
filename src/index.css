@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Animated gradient background */
+.animated-bg {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1a1a2e);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Weather background themes */
+.bg-clear {
+  background: linear-gradient(-45deg, #f7971e, #ffd200, #f7971e, #ff6b35) !important;
+  background-size: 400% 400% !important;
+  animation: gradientShift 12s ease infinite !important;
+}
+
+.bg-rain {
+  background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #1a1a2e) !important;
+  background-size: 400% 400% !important;
+  animation: gradientShift 12s ease infinite !important;
+}
+
+.bg-clouds {
+  background: linear-gradient(-45deg, #606c88, #3f4c6b, #606c88, #8e9eab) !important;
+  background-size: 400% 400% !important;
+  animation: gradientShift 12s ease infinite !important;
+}
+
+.bg-snow {
+  background: linear-gradient(-45deg, #e0eafc, #cfdef3, #a8c0ff, #e0eafc) !important;
+  background-size: 400% 400% !important;
+  animation: gradientShift 12s ease infinite !important;
+}
+
+.bg-thunder {
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #0f0c29) !important;
+  background-size: 400% 400% !important;
+  animation: gradientShift 12s ease infinite !important;
+}
+
+/* Floating particles */
+.particles {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(-100px) scale(1); opacity: 0; }
+}
+
+/* Floating weather icons */
+.float-icon {
+  animation: floatBounce 3s ease-in-out infinite;
+  display: inline-block;
+}
+
+.float-icon:nth-child(2) { animation-delay: 0.4s; }
+.float-icon:nth-child(3) { animation-delay: 0.8s; }
+.float-icon:nth-child(4) { animation-delay: 1.2s; }
+.float-icon:nth-child(5) { animation-delay: 1.6s; }
+
+@keyframes floatBounce {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+/* Glass card effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+
+/* Search bar glass */
+.search-glass input {
+  background: rgba(255,255,255,0.15) !important;
+  border: 1.5px solid rgba(255,255,255,0.3) !important;
+  color: white !important;
+  border-radius: 16px 0 0 16px !important;
+}
+
+.search-glass input::placeholder {
+  color: rgba(255,255,255,0.6) !important;
+}
+
+.search-glass input:focus {
+  background: rgba(255,255,255,0.25) !important;
+  box-shadow: none !important;
+  border-color: rgba(255,255,255,0.5) !important;
+}
+
+.search-glass .input-group-text {
+  background: rgba(255,255,255,0.15) !important;
+  border: 1.5px solid rgba(255,255,255,0.3) !important;
+  border-right: none !important;
+  color: white !important;
+  border-radius: 16px 0 0 16px !important;
+}
+
+.search-glass .btn {
+  border-radius: 0 16px 16px 0 !important;
+  border: 1.5px solid rgba(255,255,255,0.3) !important;
+  background: rgba(255,255,255,0.25) !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.search-glass .btn:hover {
+  background: rgba(255,255,255,0.35) !important;
+}
+
+/* Dropdown */
+.suggestions-dropdown {
+  background: rgba(15, 32, 39, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.suggestions-dropdown .list-group-item {
+  background: transparent !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  color: white !important;
+  transition: background 0.2s;
+}
+
+.suggestions-dropdown .list-group-item:hover {
+  background: rgba(255,255,255,0.1) !important;
+}
+
+/* Weather result cards */
+.weather-main-card {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 24px;
+  color: white;
+}
+
+.stat-box {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  padding: 14px 10px;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.stat-box:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.forecast-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 18px;
+  color: white;
+  text-align: center;
+  padding: 16px 10px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.forecast-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.18);
+}
+
+/* Navbar */
+.glass-nav {
+  background: rgba(0,0,0,0.25) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Footer */
+.glass-footer {
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+  padding: 28px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Alert */
+.glass-alert {
+  background: rgba(220, 53, 69, 0.25) !important;
+  border: 1px solid rgba(220, 53, 69, 0.4) !important;
+  color: white !important;
+  border-radius: 14px !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Scroll bar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
